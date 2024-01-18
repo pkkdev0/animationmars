@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Kurd Anime
+    </title>
+    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <!-- OWL CAROUSEL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- APP CSS -->
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/nav-header.css">
+    <link rel="stylesheet" href="/css/hero-selection.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+<div class="nav-wrapper">
+<div class="nav">
+<div class="zakarya-header" dir="rtl">
+<nav class="includrequist">
+<div class="content2">
+<div class="logo2">
+<a href="/">
+<img src="./name-site.png" alt="zakarya-faesal logo" style="width: 160px;display: flex;">
+</a>
+</div>
+</div>
+<input id="toggleChecker" type="checkbox">
+<label id="togglerLable" for="toggleChecker">
+<div class="checkboxtoggler">
+<div class="line-1"></div>
+<div class="line-2"></div>
+<div class="line-3"></div>
+</div>
+</label>
+<input type="checkbox" id="show-search">
+<label for="show-search" class="search-icon"><i class="fas fa-search" style="margin-right: -15px;"></i></label>
+  <!-- Dropdown button -->
+  <div style="position: absolute; left: 5px; list-style-type: none;" class="dropdown">
+    <% if (user && user.profileimg) { %>
+    <img src="<%= user.profileimg %>" alt="" style="width: 40px; height: 39px; border-radius: 50%; cursor: pointer;display: flex;" class="dropbtn">
+      <% } else { %>
+          <li>
+            <!-- Link to the login page -->
+            <span1 style="width: 40px; height: 39px; border-radius: 50%; cursor: pointer;display: flex; background: #525252;justify-content: center;align-items: center;" class="dropbtn">
+              <svg class="dropbtn" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="font-size: 22px;"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"></path></g></svg>
+            
+            </span1>
+          </li>
+        <% } %>
+
+    <!-- Dropdown content -->
+    <div class="dropdown-content" style="display: none;">
+
+        <% if (isAdmin || isOwner || isStaff) { %>
+          <li>
+           
+            <a href="/admin" style="display: flex; gap: 5px;align-items: center;"> <i class="fas fa-magic" style="color: #338DFF;"></i> Admin Panal</a>
+          </li>
+        <% } %>
+            <% if (user) { %>
+              <li>
+              <a href="/favorites"style="display: flex;gap: 5px;">
+              <div class="hidden text-xl lg:block">
+              <svg viewBox="0 0 24 24" style="height: 1em;width: 1em;" fill="#338DFF"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M4 2h16a1 1 0 0 1 1 1v19.276a.5.5 0 0 1-.704.457L12 19.03l-8.296 3.702A.5.5 0 0 1 3 22.276V3a1 1 0 0 1 1-1zm8 11.5l2.939 1.545-.561-3.272 2.377-2.318-3.286-.478L12 6l-1.47 2.977-3.285.478 2.377 2.318-.56 3.272L12 13.5z"></path></g></svg>
+              </div>
+              لیستی دڵخواز
+              </a>
+              </li>
+ 
+              <li>
+                <!-- Link to the login page -->
+                <a href="/profile/<%= user.userId %>" style="display: flex; gap: 5px;align-items: center;"><i class="fas fa-user" style="color: #338DFF;"></i> profile</a>
+              </li>
+              <li>
+                <!-- Link to the login page -->
+                <a href="/logout" style="display: flex; gap: 5px;align-items: center;"><i class='bx bx-log-out' style="color: #338DFF; font-size: 17px;"></i></i> logout</a>
+              </li>
+
+            <% } else { %>
+              <li>
+                <!-- Link to the login page -->
+                <a href="/login" style="display: flex; gap: 5px; align-items: center;"><i class='bx bx-log-in' style="color: #338DFF; font-size: 17px;"></i> login</a>
+              </li>
+            <% } %>
+      <!-- Other dropdown items can be added here -->
+    </div>
+  </div>
+  
+  
+  
+  <form class="search-box">
+
+<input type="text" placeholder="گەڕان , فیلم , دراما" id="search" autocomplete="off">
+<div class="scroll-over">
+<div class="clasl_list_serach" dir="rtl">
+  
+  <% posters.forEach(function(poster) { %>
+  <a href="/movie-details/<%= poster.postId %>" class="list-movie-search image">
+  <img src="<%= poster.imgLink %>" alt="<%= poster.username %>" style="height: 100px;">
+  <div class="testshow">
+  <span class="textdown"><h9><%= poster.username %> <span1 style="display: none;"><%= poster.biography %></span1></h9>
+  <span style="color: #6d6d6de8;">
+  <%= poster.biography %>
+  </span></span></div>
+  </a>
+  <% }); %>
+
+  
+</div>
+</div>
+
+</form> 
+<div class="content2">
+<ul class="links2">
+<li>
+<a href="/" style="display: flex;gap: 5px;">
+<div class="hidden text-xl lg:block"><svg stroke="#338DFF" fill="#338DFF" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 21H5a1 1 0 0 1-1-1v-9H1l10.327-9.388a1 1 0 0 1 1.346 0L23 11h-3v9a1 1 0 0 1-1 1zm-6-2h5V9.157l-6-5.454-6 5.454V19h5v-6h2v6z"></path></g></svg></div>
+سەرەتا</a></li>
+  <li>
+  <input type="checkbox" id="show-features2">
+  <label for="show-features2" style="display: flex;gap: 5px;"> 
+  <div class="hidden text-xl lg:block">
+  <svg stroke="#338DFF" fill="#338DFF" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 20h8v2h-8C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10a9.956 9.956 0 0 1-2 6h-2.708A8 8 0 1 0 12 20zm0-10a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-4 4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm8 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-4 4a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path></g></svg>
+  </div>
+  فیلم</label>
+  <ul>
+  <li><a href="/zhernus">فیلمی ژێرنووسکراو</a></li>
+  <li><a href="/doblaj">فیلمی دۆبلاژکراو</a></li>
+  </ul>
+  </li>
+
+
+  <li>
+  <input type="checkbox" id="show-features2">
+  <label for="show-features2" style="display: flex;gap: 5px;"> 
+  <div class="hidden text-xl lg:block">
+  <svg stroke="#338DFF" fill="#338DFF" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 20h8v2h-8C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10a9.956 9.956 0 0 1-2 6h-2.708A8 8 0 1 0 12 20zm0-10a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-4 4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm8 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-4 4a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"></path></g></svg>
+  </div>
+  tags</label>
+  <ul>
+    <% tags.forEach(function(tag) { %>
+        <li><a href="/tags/<%= tag %>"><%= tag %></a></li>
+    <% }) %>
+
+  </ul>
+  </li>
+
+  
+</ul>
+</div>
+</nav>
+</div>
+</div>
+</div>
+    <!-- END NAV -->
+
+
+
+
+    <!-- LATEST CARTOONS SECTION -->
+<div class="inline-resize">
+<div class="section">
+<div class="container">
+<div class="section-header">
+ئەنیمی  دۆبلاژکراو
+</div>
+  <% if (posters && posters.length > 0) { %>
+<div class="movies-slide carousel-nav-center owl-carousel">
+  <% posters.forEach(function(poster) { %>
+<!-- MOVIE ITEM -->
+<a href="/movie-details/<%= poster.postId %>" class="movie-item">
+  <div class="movies-poster-extra">
+<h4><i class='bx bx-play-circle' style='color:#ffffff'></i></h4>
+  </div>
+  <img src="<%= poster.imgLink %>" alt="<%= poster.username %>">
+  <div class="movie-item-content">
+<div class="movie-item-title" style="z-index: 2;">
+  <%= poster.username %>
+</div>
+<div class="movie-item-title" style="z-index: 2; font-size: 10px;">
+  <%= poster.biography %>
+</div>
+<div class="movie-infos">
+<div class="movie-info" style="z-index: 2;">
+  <i class="bx bxs-star"></i>
+  <span><%= poster.star %></span>
+</div>
+<div class="movie-info" style="z-index: 2;">
+<i class="bx bxs-time"></i>
+<span><%= poster.time %></span>
+</div>
+  <div class="movie-info" style="z-index: 2;">
+    <i class="bx bx-show"></i>
+    <span><%= formatNumber(poster.viewsCount) %></span>
+  </div>
+  </div>
+</div>
+</a>
+<!-- END MOVIE ITEM -->
+<% }) %>
+</div>
+<% } else { %>
+<p>No posters found.</p>
+<% } %>
+</div>
+</div>
+</div>
+<!-- END LATEST CARTOONS SECTION -->
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+    <!-- SCRIPT -->
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- OWL CAROUSEL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+    <!-- APP SCRIPT -->
+    <script src="/js/app.js"></script>
+  <script>
+    let search = document.getElementById('search');
+
+    let clasl_list_serach = document.getElementsByClassName('clasl_list_serach')[0];
+
+    search.addEventListener('keyup', ()=>{
+        let filter = search.value.toUpperCase();
+        let a = clasl_list_serach.getElementsByTagName('a');
+        for (let i = 0; i < a.length; i++) {
+            let b = a[i].getElementsByClassName('testshow')[0];
+            let c = b.getElementsByTagName('h9')[0];
+
+            let TextValue = c.textContent || c.innerText;
+            if (TextValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = '';
+                clasl_list_serach.style.visibility = "visible";
+                clasl_list_serach.style.display = "block";
+                clasl_list_serach.style.opacity = 1;
+            } else {
+                a[i].style.display = 'none';
+            }
+            if (search.value == 0) {
+                clasl_list_serach.style.visibility = "hidden";
+                clasl_list_serach.style.display = "none";
+                clasl_list_serach.style.opacity = 0;
+            }
+        }
+    })
+
+  </script>
+  <script>
+  // Get the dropdown button and content
+  var dropdown = document.querySelector('.dropdown');
+  var dropdownContent = document.querySelector('.dropdown-content');
+
+  // Add event listener for when the dropdown button is clicked
+  dropdown.addEventListener('click', function() {
+    dropdownContent.style.display = dropdownContent.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Optional: Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName('dropdown-content');
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.style.display === 'block') {
+          openDropdown.style.display = 'none';
+        }
+      }
+    }
+  }
+  </script>
+</body>
+
+</html>

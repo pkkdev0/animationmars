@@ -1,0 +1,846 @@
+                  <!DOCTYPE html>
+                  <html lang="en">
+                  <head>
+                      <meta charset="UTF-8">
+                      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                      <title>Document</title>
+
+
+                  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+                  <link href="https://pro.fontawesome.com/releases/v5.13.1/css/all.css" rel="stylesheet">
+                  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+                  <link rel="stylesheet" href="https://codemirror.net/addon/hint/show-hint.css">
+                  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+                  </head>
+                  <body>
+
+
+
+                  <div class="container">
+                  <div class="container contact-form">
+
+
+                  <form action="/admin/create-poster" method="post">
+
+                  <div class="row">
+                  <div class="col-md-6">
+
+                  <div class="form-group">
+                  <label><i class="fad fa-fingerprint"></i> Post ID<span style="color: rgb(175, 22, 22)">*</span></label>
+                  <input type="text" name="postId" id="postId" class="form-control" placeholder="<%= postId %>" required="required" value="<%= postId %>" />
+                  </div>
+
+                  <div class="form-group">
+                  <label><i class="fad fa-crown"></i> user ID<span style="color: rgb(175, 22, 22)">*</span></label>
+                  <input type="text" name="userId" id="userId" class="form-control" placeholder="<%= userId %>" value="<%= userId %>" required="required" disabled/>
+                  </div>
+
+
+                  <div class="form-group">
+                  <label for="star">star :</label>
+                  <input type="text" id="star" name="star" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                  <label for="time">time :</label>
+                  <input type="text" id="time" name="time" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                  <label for="datatime">yar :</label>
+                  <input type="text" id="datatime" name="datatime" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                  <label for="triler">triler :</label>
+                  <input type="text" id="triler" name="triler" class="form-control" required>
+                  </div>
+
+                  <div class="form-group">
+                  <label><i class="fad fa-image"></i> Image Link</label>
+                  <input type="text" name="imgLink" id="imgLink" class="form-control" placeholder=""/>
+                  </div>
+                  </div>
+
+
+
+                  <div class="col-md-6">
+                  <div class="form-group">
+                  <label><i class="fad fa-text"></i> Username<span style="color: rgb(175, 22, 22)">*</span></label>
+                  <input name="username" id="username" class="form-control" placeholder="username" maxlength="300" required="required">
+                  </div>
+                  <div class="form-group">
+                  <label><i class="fad fa-texts"></i> Long Description<span style="color: rgb(175, 22, 22)">*</span></label>
+                  <textarea name="biography" id="biography" class="form-control" placeholder="biography" minlength="10" required="required" style="width: 100%; height: 300px;"></textarea>
+                  </div>
+
+
+
+<div class="multi-selector">
+<div class="select-field">
+<input type="text" placeholder="Choose warger" id="searchTasks" class="input-selector" style="background: none;">
+<span class="down-arrow">&blacktriangledown;</span>
+</div>
+<div class="list">
+<% staffs.forEach(function(staff) { %>
+<label for="<%= staff.userId %>" class="task" style="color:#fff;padding: 10px 5px;display: flex;align-items: center;gap: 10px;">
+  <img src="<%= staff.profileimg %>" style="height: 30px; width: 30px; border-radius:50px">
+<%= staff.username %>
+  <input type="checkbox" name="warger" value="<%= staff.userId %>" style="position: absolute;right: 10px;">
+
+</label>
+<% }); %>
+</div></div>
+<br>
+<div class="multi-selector">
+<div class="select-field">
+<input type="text" placeholder="Choose bargs" id="searchTasks" class="input-selector" style="background: none;">
+<span class="down-arrow">&blacktriangledown;</span>
+</div>
+<div class="list">
+<% staffs.forEach(function(staff) { %>
+  <label for="<%= staff.userId %>" class="task" style="color:#fff;padding: 10px 5px;display: flex;align-items: center;gap: 10px;">
+    <img src="<%= staff.profileimg %>" style="height: 30px; width: 30px; border-radius:50px">
+  <%= staff.username %>
+    <input type="checkbox" name="bargs" value="<%= staff.userId %>" style="position: absolute;right: 10px;">
+
+  </label>
+<% }); %>
+</div></div>
+<br>
+<div class="multi-selector">
+<div class="select-field">
+<input type="text" placeholder="Choose taknek" id="searchTasks" class="input-selector" style="background: none;">
+<span class="down-arrow">&blacktriangledown;</span>
+</div>
+<div class="list">
+<% staffs.forEach(function(staff) { %>
+  <label for="<%= staff.userId %>" class="task" style="color:#fff;padding: 10px 5px;display: flex;align-items: center;gap: 10px;">
+    <img src="<%= staff.profileimg %>" style="height: 30px; width: 30px; border-radius:50px">
+  <%= staff.username %>
+    <input type="checkbox" name="taknek" value="<%= staff.userId %>" style="position: absolute;right: 10px;">
+
+  </label>
+<% }); %>
+</div></div>
+<script>
+  document.querySelectorAll('.select-field').forEach(function(selectField) {
+      selectField.addEventListener('click', function() {
+          // Find the sibling .list of the clicked .select-field
+          var correspondingList = this.nextElementSibling;
+
+          // Toggle the 'show' class for the corresponding .list
+          if(correspondingList) {
+              correspondingList.classList.toggle('show');
+          }
+
+          // Find the child .down-arrow of the clicked .select-field to toggle its class
+          var arrow = this.querySelector('.down-arrow');
+          if(arrow) {
+              arrow.classList.toggle('rotate180');
+          }
+      });
+  });
+  // Since the id should be unique, change it to a class for multiple use
+  document.querySelectorAll('.input-selector').forEach(function(inputSelector) {
+      inputSelector.addEventListener('keyup', function() {
+          var searchVal = this.value.toLowerCase();
+          // Find the corresponding .list for the input being used for search
+          var list = this.closest('.multi-selector').querySelector('.list');
+
+          // Filter the items in the .list based on the search value
+          if(list) {
+              var tasks = list.querySelectorAll('.task');
+              tasks.forEach(function(task) {
+                  var text = task.textContent || task.innerText;
+                  if (text.toLowerCase().indexOf(searchVal) > -1) {
+                      task.style.display = "";
+                  } else {
+                      task.style.display = "none";
+                  }
+              });
+          }
+      });
+  });
+</script>
+
+
+
+
+
+
+
+                    
+
+           
+
+
+<br>
+
+
+                  <div class="form-group">
+                  <label><i class="fad fa-tags"></i> Tags<span style="color: rgb(175, 22, 22)">*</span></label>
+                  <select name="tags" id="tags" multiple required>
+                    <% tags.forEach(function(tag) { %>
+                      <option value="<%= tag %>"><%= tag %></option>
+                    <% }); %>
+                  </select>
+                  </div>
+                  </div>
+                  </div>
+
+
+                  <br><br>
+
+   <button type="submit" name="btnSubmit" class="btn btn-primary"><i class="fad fa-save"></i> Submit</button>
+                        </form>
+                      </div>
+                      </div>
+                      <br><br>
+
+
+                  <script>
+
+
+                  $(document).on('click', '.dropdown-menu', function (e) {
+                      e.stopPropagation();
+                    });
+                    function imgError(place) {
+                        place.src='../img/undefined_avatar.png';
+                    }
+                    function backImgError(place) {
+                        place.src='../img/undefined_back.png';
+                    }
+                    var i = 0;
+                    var txt = "Don't you want to expand and improve your Discord bot? Here Topic are here for you!";
+                    var speed = 50;
+
+                    $(function() {
+                        document.getElementById("typeText").innerHTML = txt;
+                    });
+                    // make it as accordion for smaller screens
+                    if ($(window).width() < 992) {
+                      $('.dropdown-menu a').click(function(e){
+                        e.preventDefault();
+ if($(this).next('.submenu').length){
+                            $(this).next('.submenu').toggle();
+                          }
+                          $('.dropdown').on('hide.bs.dropdown', function () {
+                         $(this).find('.submenu').hide();
+                      })
+                      });
+                    }
+                    $(function(){
+                        $('.dropdown').hover(function() {
+                            $(this).addClass('open');
+                        },
+                        function() {
+                            $(this).removeClass('open');
+                        });
+                    });
+                    $(document).ready(function() {
+                        var select = $('select[multiple]');
+                        var options = select.find('option');
+                        var div = $('<div />').addClass('selectMultiple');
+                        var active = $('<div />');
+                        var list = $('<ul />');
+                        var placeholder = select.data('placeholder');
+                        var span = $('<span />').text(placeholder).appendTo(active);
+                        options.each(function() {
+                            var text = $(this).text();
+                            if($(this).is(':selected')) {
+                                active.append($('<a />').html('<em>' + text + '</em><i></i>'));
+                                span.addClass('hide');
+                            } else {
+                                list.append($('<li />').html(text));
+                            }
+                        });
+                        active.append($('<div />').addClass('arrow'));
+                        div.append(active).append(list);
+                        select.wrap(div);
+                        $(document).on('click', '.selectMultiple ul li', function(e) {
+                            var select = $(this).parent().parent();
+                            var li = $(this);
+                            if(!select.hasClass('clicked')) {
+                                select.addClass('clicked');
+                                li.prev().addClass('beforeRemove');
+                                li.next().addClass('afterRemove');
+                                li.addClass('remove');
+                                var a = $('<a />').addClass('notShown').html('<em>' + li.text() + '</em><i></i>').hide().appendTo(select.children('div'));
+                                a.slideDown(400, function() {
+                                    setTimeout(function() {
+                                        a.addClass('shown');
+                                        select.children('div').children('span').addClass('hide');
+                                        select.find('option:contains(' + li.text() + ')').prop('selected', true);
+                                    }, 500);
+                                });
+                                setTimeout(function() {
+                                    if(li.prev().is(':last-child')) {
+                                        li.prev().removeClass('beforeRemove');
+                                    }
+                                    if(li.next().is(':first-child')) {
+                                        li.next().removeClass('afterRemove');
+                                    }
+                                    setTimeout(function() {
+                                        li.prev().removeClass('beforeRemove');
+                                        li.next().removeClass('afterRemove');
+                                    }, 200);
+
+                                    li.slideUp(400, function() {
+                                        li.remove();
+                                        select.removeClass('clicked');
+                                    });
+                                }, 600);
+                            }
+                        });
+                        $(document).on('click', '.selectMultiple > div a', function(e) {
+                            var select = $(this).parent().parent();
+                            var self = $(this);
+                            self.removeClass().addClass('remove');
+                            select.addClass('open');
+                            setTimeout(function() {
+                                self.addClass('disappear');
+                                setTimeout(function() {
+                                    self.animate({
+                                        width: 0,
+                                        height: 0,
+                                        padding: 0,
+                                        margin: 0
+                                    }, 300, function() {
+                                        var li = $('<li />').text(self.children('em').text()).addClass('notShown').appendTo(select.find('ul'));
+                                        li.slideDown(400, function() {
+                                            li.addClass('show');
+                                            setTimeout(function() {
+                                                select.find('option:contains(' + self.children('em').text() + ')').prop('selected', false);
+                                                if(!select.find('option:selected').length) {
+                                                    select.children('div').children('span').removeClass('hide');
+                                                }
+                                                li.removeClass();
+                                            }, 400);
+                                        });
+                                        self.remove();
+                                    })
+                                }, 300);
+                            }, 400);
+                        });
+                        $(document).on('click', '.selectMultiple > div .arrow, .selectMultiple > div span', function(e) {
+                            $(this).parent().parent().toggleClass('open');
+                        });
+
+                    });
+                    var $info = $('.tooltip');
+                    $info.each( function () {
+                      var dataInfo = $(this).data("tooltip");
+                      $( this ).append('<span class="inner" >' + dataInfo + '</span>');
+                    });
+                    $("#search, .searchArea").hover(function () {  
+                      $(".searchArea").show();
+                      $("#search").attr("style","width: 470px; border-radius: 4px 4px 0px 0px;");
+                    }, function () {
+                      $(".searchArea").hide();
+                      $("#search").attr("style","width: 470px; border-radius: 4px 4px 4px 4px;");
+                    });
+                    console.log("Topic: Online - Coded by: Claudette#0241 & Void Development")
+                    $(document).ready(function(){
+                        $(".dropdown").hover(function(){
+                            var dropdownMenu = $(this).children(".dropdown-menu");
+                            if(dropdownMenu.is(":visible")){
+                                dropdownMenu.parent().toggleClass("open");
+                            }
+                        });
+                    });     
+                    $('body').toggleClass('loaded');
+                    $(document).ready(function() {
+
+                        setTimeout(function(){
+                            $('body').addClass('loaded');
+                            $('h1').css('color','#222222');
+                        }, 150);
+
+                    });
+
+                  </script>
+                  <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+                  /* Custom Selection */
+                  ::-moz-selection {
+                    color: #7289da;
+                    background: #2c2f33;
+                    transition: all 0.3s;
+                  }
+                  *::-webkit-scrollbar-track {
+                      background-color: #2c2f33;
+                      width: 5px;
+                      border:0;
+                  }
+                  ::selection {
+                    color: #7289da;
+                    background: #2c2f33;
+                    transition: all 0.3s;
+                  }
+
+
+                  * {
+                    box-sizing: border-box;
+                  }
+                  body {
+                      font-family: 'Poppins', sans-serif;
+                      background-color: #2c2f33;
+                  }
+                  .bg-vcodes {
+                      background-color: #23272a;
+                      color: #fff;
+                  }
+                  .copy-link {
+                    text-decoration: none;
+                    color: #6c757d;
+                    transition: all 0.3s;
+                  }
+
+
+
+                  .contact-form{
+                      background: #23272a;
+                      margin-top: 10%;
+                      margin-bottom: 5%;
+                      width: 70%;
+                  }
+                  .contact-form input {
+                    background-color: #2c2f33;
+                    color: #fff;
+                    border: none;
+                  }
+                  .contact-form textarea {
+                    background-color: #2c2f33;
+                    color: #fff;
+                    border: none;
+                  }
+                  .contact-form textarea:focus {
+                    background-color: #2c2f33;
+                    color: #fff;
+                    border: none;
+                  }
+                  .contact-form input:focus {
+                    background-color: #2c2f33;
+                    color: #fff;
+                    border: none;
+                  }
+                  .contact-form input:disabled {
+                    background-color: #2c2f33;
+                    color: rgb(73, 73, 73);
+                    border: none;
+                  }
+                  .contact-form .form-control{
+                      border-radius:1rem;
+                  }
+                  .contact-image{
+                      text-align: center;
+                  }
+                  .contact-image i{
+                      border-radius: 6rem;
+                      width: 11%;
+                      margin-top: -7%;
+                  }
+                  .contact-form form{
+                      padding: 14%;
+                  }
+                  .contact-form form .row{
+                      margin-bottom: -7%;
+                  }
+                  .contact-form h3{
+                      margin-bottom: 8%;
+                      margin-top: -10%;
+                      text-align: center;
+                      color: #0062cc;
+                  }
+                  .contact-form .btnContact {
+                      width: 50%;
+                      border: none;
+                      border-radius: 1rem;
+                      padding: 1.5%;
+                      background: #dc3545;
+                      font-weight: 600;
+                      color: #fff;
+                      cursor: pointer;
+                  }
+                  .btnContactSubmit
+                  {
+                      width: 50%;
+                      border-radius: 1rem;
+                      padding: 1.5%;
+                      color: #fff;
+                      background-color: #0062cc;
+                      border: none;
+                      cursor: pointer;
+                  }
+                  .contact-form label {
+                    color: #fff;
+                  }
+                  .bootstrap-select .bs-ok-default::after {
+                      width: 0.3em;
+                      height: 0.6em;
+                      border-width: 0 0.1em 0.1em 0;
+                      transform: rotate(45deg) translateY(0.5rem);
+                  }
+
+                  .btn.dropdown-toggle:focus {
+                      outline: none !important;
+                  }
+                  .contact-form {
+                      background: #23272a;
+                      margin-top: 10%;
+                      margin-bottom: 5%;
+                      width: 90%;
+                  }
+                  .selectMultiple {
+                      width: 100%;
+                      position: relative;
+                      border-radius: 1rem;
+                  }
+                  .selectMultiple select {
+                    display: none;
+                  }
+                  .selectMultiple > div {
+                    position: relative;
+                    z-index: 2;
+                    padding: 8px 12px 2px 12px;
+                    border-radius: 15px;
+                    background: #2c2f33;
+                    font-size: 14px;
+                    min-height: 44px;
+                    transition: box-shadow 0.3s ease;
+                  }
+                  .selectMultiple > div:hover {
+                    box-shadow: 0 4px 24px -1px rgba(22, 42, 90, 0.16);
+                  }
+                  .selectMultiple > div .arrow {
+                    right: 1px;
+                    top: 0;
+                    bottom: 0;
+                    cursor: pointer;
+                    width: 28px;
+                    position: absolute;
+                  }
+                  .selectMultiple > div .arrow:before, .selectMultiple > div .arrow:after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 2px;
+                    height: 8px;
+                    border-bottom: 8px solid #99A3BA;
+                    top: 43%;
+                    transition: all 0.3s ease;
+                  }
+                  .selectMultiple > div .arrow:before {
+                    right: 12px;
+                    transform: rotate(-130deg);
+                  }
+                  .selectMultiple > div .arrow:after {
+                    left: 9px;
+                    transform: rotate(130deg);
+                  }
+                  .selectMultiple > div span {
+                    color: #99A3BA;
+                    display: block;
+                    position: absolute;
+                    left: 12px;
+                    cursor: pointer;
+                    top: 8px;
+                    line-height: 28px;
+                    transition: all 0.3s ease;
+                  }
+                  .selectMultiple > div span.hide {
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translate(-4px, 0);
+                  }
+                  .selectMultiple > div a {
+                    position: relative;
+                    padding: 0 24px 6px 8px;
+                    line-height: 28px;
+                    color: #1E2330;
+                    display: inline-block;
+                    vertical-align: top;
+                    margin: 0 6px 0 0;
+                  }
+                  .selectMultiple > div a em {
+                    font-style: normal;
+                    display: block;
+                    white-space: nowrap;
+                  }
+                  .selectMultiple > div a:before {
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    bottom: 6px;
+                    width: 100%;
+                    position: absolute;
+                    display: block;
+                    background: #23272a;
+                    z-index: -1;
+                    border-radius: 4px;
+                  }
+                  .selectMultiple > div a i {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 24px;
+                    height: 28px;
+                    display: block;
+                  }
+                  .selectMultiple > div a i:before, .selectMultiple > div a i:after {
+                    content: "";
+                    display: block;
+                    width: 2px;
+                    height: 10px;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    background: #7289da;
+                    border-radius: 1px;
+                  }
+                  .selectMultiple > div a i:before {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                  }
+                  .selectMultiple > div a i:after {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                  }
+                  .selectMultiple > div a.notShown {
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                  }
+                  .selectMultiple > div a.notShown:before {
+                    width: 28px;
+                    transition: width 0.45s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0.2s;
+                  }
+                  .selectMultiple > div a.notShown i {
+                    opacity: 0;
+                    transition: all 0.3s ease 0.3s;
+                  }
+                  .selectMultiple > div a.notShown em {
+                    opacity: 0;
+                    transform: translate(-6px, 0);
+                    transition: all 0.4s ease 0.3s;
+                  }
+                  .selectMultiple > div a.notShown.shown {
+                    opacity: 1;
+                  }
+                  .selectMultiple > div a.notShown.shown:before {
+                    width: 100%;
+                  }
+                  .selectMultiple > div a.notShown.shown i {
+                    opacity: 1;
+                  }
+                  .selectMultiple > div a.notShown.shown em {
+                    opacity: 1;
+                    transform: translate(0, 0);
+                  }
+                  .selectMultiple > div a.remove:before {
+                    width: 28px;
+                    transition: width 0.4s cubic-bezier(0.87, -0.41, 0.19, 1.44) 0s;
+                  }
+                  .selectMultiple > div a.remove i {
+                    opacity: 0;
+                    transition: all 0.3s ease 0s;
+                  }
+                  .selectMultiple > div a.remove em {
+                    opacity: 0;
+                    transform: translate(-12px, 0);
+                    transition: all 0.4s ease 0s;
+                  }
+                  .selectMultiple > div a.remove.disappear {
+                    opacity: 0;
+                    transition: opacity 0.5s ease 0s;
+                  }
+                  .selectMultiple > ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    font-size: 16px;
+                    z-index: 1;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    visibility: hidden;
+                    height: 350px;
+                    overflow: auto;
+                    opacity: 0;
+                    transform: translate(0, 20px) scale(0.8);
+                    transform-origin: 0 0;
+                    filter: drop-shadow(0 12px 20px rgba(22, 42, 90, 0.08));
+                    transition: all 0.4s ease, transform 0.4s cubic-bezier(0.87, -0.41, 0.19, 1.44), filter 0.3s ease 0.2s;
+                  }
+                  .selectMultiple > ul li {
+                    color: #fff;
+                    background: #2c2f33;
+                    padding: 12px 16px;
+                    cursor: pointer;
+                    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease 0.3s, opacity 0.5s ease 0.3s, border-radius 0.3s ease 0.3s;
+                  }
+                  .selectMultiple > ul li:first-child {
+                    border-radius: 8px 8px 0 0;
+                  }
+                  .selectMultiple > ul li:first-child:last-child {
+                    border-radius: 8px;
+                  }
+                  .selectMultiple > ul li:last-child {
+                    border-radius: 0 0 8px 8px;
+                  }
+                  .selectMultiple > ul li:last-child:first-child {
+                    border-radius: 8px;
+                  }
+                  .selectMultiple > ul li:hover {
+                    background: #7289da;
+                    color: #fff;
+                  }
+                  .selectMultiple > ul li:after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 6px;
+                    height: 6px;
+                    background: rgba(0, 0, 0, 0.4);
+                    opacity: 0;
+                    border-radius: 100%;
+                    transform: scale(1, 1) translate(-50%, -50%);
+                    transform-origin: 50% 50%;
+                  }
+                  .selectMultiple > ul li.beforeRemove {
+                    border-radius: 0 0 8px 8px;
+                  }
+                  .selectMultiple > ul li.beforeRemove:first-child {
+                    border-radius: 8px;
+                  }
+                  .selectMultiple > ul li.afterRemove {
+                    border-radius: 8px 8px 0 0;
+                  }
+                  .selectMultiple > ul li.afterRemove:last-child {
+                    border-radius: 8px;
+                  }
+                  .selectMultiple > ul li.remove {
+                    transform: scale(0);
+                    opacity: 0;
+                  }
+                  .selectMultiple > ul li.remove:after {
+                    -webkit-animation: ripple 0.4s ease-out;
+                            animation: ripple 0.4s ease-out;
+                  }
+                  .selectMultiple > ul li.notShown {
+                    display: none;
+                    transform: scale(0);
+                    opacity: 0;
+                    transition: transform 0.35s ease, opacity 0.4s ease;
+                  }
+                  .selectMultiple > ul li.notShown.show {
+                    transform: scale(1);
+                    opacity: 1;
+                  }
+                  .selectMultiple.open > div {
+                    box-shadow: 0 4px 20px -1px rgba(22, 42, 90, 0.12);
+                  }
+                  .selectMultiple.open > div .arrow:before {
+                    transform: rotate(-50deg);
+                  }
+                  .selectMultiple.open > div .arrow:after {
+                    transform: rotate(50deg);
+                  }
+                  .selectMultiple.open > ul {
+                    transform: translate(0, 12px) scale(1);
+                    opacity: 1;
+                    visibility: visible;
+                    filter: drop-shadow(0 16px 24px rgba(22, 42, 90, 0.16));
+                    z-index: 999;
+                  }
+
+                  @-webkit-keyframes ripple {
+                    0% {
+                      transform: scale(0, 0);
+                      opacity: 1;
+                    }
+                    100% {
+                      opacity: 0;
+                      transform: scale(50, 50);
+                    }
+                  }
+
+                  @keyframes ripple {
+                    0% {
+                      transform: scale(0, 0);
+                      opacity: 1;
+                    }
+                    100% {
+                      opacity: 0;
+                      transform: scale(50, 50);
+                    }
+                  }
+
+                  .selectMultiple > div {
+                      position: relative;
+                      width: 100%;
+                      padding: .375rem .75rem;
+                      font-size: 1rem;
+                      color: #fff;
+                      background-color: #2c2f33;
+                      background-clip: padding-box;
+                      border: 1px solid #2c2f33;
+                      border-radius: 1rem;
+                      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                  }
+
+
+                    input{
+                        outline: none;
+                        border: none;
+                    }
+                    .multi-selector{
+                        width: max-content;
+                    }
+                    .select-field{
+                      background: #2c2f33;
+                    }
+                    .select-field,.task,.list{
+                      width: 100%;
+                      padding: 0.3rem;
+                      border-radius: 8px;
+                    }
+                    .list{
+                      box-shadow: 0 30px 60px rgb(0 0 0);
+                      display: none;
+                      background: #2c2f33;
+                      top: 10px;
+                      position: relative;
+                    }
+                    .down-arrow{
+                        font-size: 1.2rem;
+                        display: inline-block;
+                        cursor: pointer;
+                        transition: 0.2s linear;
+                      color: #fff;
+                    }
+                    .task{
+                        display: block;
+                        padding-left: 0;
+                    }
+                    .task span{
+                        float: right;
+                        font-size: 0.6rem;
+                        padding-top: 6px;
+                    }
+                    .task:hover{
+                      background-color: #7289da;
+                      padding: 10px 5px;
+                      }
+                    .show{
+                        display: block;
+                    }
+                    .rotate180{
+                        transform: rotate(-60deg);
+                    }
+
+                  </style>
+                  </body>
+                  </html>

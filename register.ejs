@@ -1,0 +1,220 @@
+  <!DOCTYPE html>
+  <!-- Website - www.codingnepalweb.com -->
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <title>register</title>
+    </head>
+    <body>
+  <div class="form-container">
+  <p class="title">Create account</p>
+  <form class="form" action="/register" method="POST">
+
+
+  <input type="text" class="input" name="username" placeholder="Username" required />
+  <input type="text" class="input" name="displayname" placeholder="displayname" required>
+  <input type="password" class="input" name="passwords" placeholder="Password" required min="12345678">
+    <input type="number" class="input" name="age" placeholder="18 years old" required min="18" />
+<div style="display: none">
+  <label for="backgrund">backgrund URL:</label>
+  <input type="text" class="input" name="backgrund" placeholder="backgrund"/>
+  <label for="profileimg">profileimg URL:</label>
+  <input type="text" class="input" name="profileimg" placeholder="profileimg"/>
+  <label for="bio">bio:</label>
+  <input type="text" class="input" name="bio" placeholder="Bio"/>
+  <label for="facebookProfile">facebookProfile URL:</label>
+  <input type="text" name="facebookProfile" >
+  <label for="twitterProfile">twitterProfile URL:</label>
+  <input type="text" name="twitterProfile">
+  <label for="tiktokProfile">tiktokProfile URL:</label>
+  <input type="text" name="tiktokProfile">
+  <label for="telegramProfile">telegramProfile URL:</label>
+  <input type="text" name="telegramProfile">
+  <label for="youtubeProfile">youtubeProfile URL:</label>
+  <input type="text" name="youtubeProfile" >
+  <label for="instagramProfile">instagramProfile URL:</label>
+  <input type="text" name="instagramProfile">
+  <label for="discordProfile">discordProfile URL:</label>
+  <input type="text" name="discordProfile">
+</div>
+
+  <button type="submit" class="form-btn">Create account</button>
+  </form>
+  <p class="sign-up-label">
+  Already have an account?<span class="sign-up-link"><a href="/login">Log in</span>
+  </p>
+  <div class="buttons-container">
+    <% if (typeof message !== 'undefined') { %>
+      <p><%= message %></p>
+    <% } %>
+  </div>
+  </div>
+    </body>
+  </html>
+  <style>
+    /* Import Google font - Poppins */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0faff;
+  }
+  .form-container {
+    width: 350px;
+    height: 100%;
+    background-color: #fff;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 20px 30px;
+  }
+
+  .title {
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin: 10px 0 30px 0;
+    font-size: 28px;
+    font-weight: 800;
+  }
+
+  .sub-title {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 9px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+
+  .form {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 18px;
+    margin-bottom: 15px;
+  }
+
+  .input {
+    border-radius: 20px;
+    border: 1px solid #c0c0c0;
+    outline: 0 !important;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 12px 15px;
+  }
+
+  .form-btn {
+    padding: 10px 15px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    border: 0 !important;
+    outline: 0 !important;
+    background: teal;
+    color: white;
+    cursor: pointer;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .form-btn:active {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+
+  .sign-up-label {
+    margin: 0;
+    font-size: 10px;
+    color: #747474;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+
+  .sign-up-link {
+    margin-left: 1px;
+    font-size: 11px;
+    text-decoration: underline;
+    text-decoration-color: teal;
+    color: teal;
+    cursor: pointer;
+    font-weight: 800;
+  }
+
+  .buttons-container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 20px;
+    gap: 15px;
+  }
+
+  .apple-login-button,
+      .google-login-button {
+    border-radius: 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px 15px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .apple-login-button {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000;
+  }
+
+  .google-login-button {
+    border: 2px solid #747474;
+  }
+
+  .apple-icon,
+      .google-icon {
+    font-size: 18px;
+    margin-bottom: 1px;
+  }
+  </style>
