@@ -1,0 +1,709 @@
+:root {
+  --main-color: #338DFF; /* ڕەنگی سیمبوول*/
+  --body-bg: black;  /* ڕەنگی ڕووکار*/
+  --box-bg: #338bffb6;  /* ڕەنگی بۆکس*/
+  --text-color: #ffffff; /* ڕەنگی تێکست*/
+
+  --nav-height: 60px;
+  --space-top: 30px;
+}
+.logo2 {
+  margin-left: -40px;
+  display: flex;
+  direction: ltr;
+  align-items: center;
+}
+@media screen and (max-width: 2200px) {
+  .logo2 {
+    margin-left: -40px;
+    display: flex;
+    direction: ltr;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 910px) {
+  .logo2 {
+    margin-left: -2px;
+    display: flex;
+    direction: ltr;
+    align-items: center;
+  }
+}
+.movie-info.border-movie-info-itme{
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  border: 1px solid var(--box-bg);
+  gap: 5px;
+  border-radius: 5px;
+  background: var(--box-bg);
+  padding: 0 5px;
+}
+@media screen and (max-width: 2200px) {
+  .border-movie-info-itme{
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid var(--box-bg);
+    gap: 5px;
+    border-radius: 5px;
+    background: var(--box-bg);
+    padding: 0 5px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .border-movie-info-itme{
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border: 1px solid var(--box-bg);
+    gap: 5px;
+    border-radius: 5px;
+    background: var(--box-bg);
+    padding: 0 5px;
+  }
+}
+.testshow {
+display: flex;
+flex-direction: column;
+}
+.text-xl {
+font-size: 1.25rem;
+line-height: 1.75rem;
+}
+.hidden.text-xl{
+align-items: center;
+display: flex;
+}
+.zakarya-header {
+z-index: 999;
+width: 100%;
+/* border-bottom: 1px solid #11507c; */
+box-shadow: 0px 0px 15px #000;
+}
+
+.zakarya-header nav {
+display: flex;
+position: relative;
+height: 50px;
+align-items: center;
+}
+
+nav .content2 {
+display: flex;
+align-items: center;
+}
+
+nav .content2 .links2 {
+margin-left: 80px;
+display: flex;
+}
+
+.content2 .logo2 a {
+color: #fff;
+font-size: 30px;
+}
+
+.content2 .links2 li {
+list-style: none;
+}
+
+.content2 .links2 li a, .content2 .links2 li label {
+color: #fff;
+font-size: 16px;
+padding: 7px 17px;
+transition: all 0.3s ease;
+}
+
+.content2 .links2 li label {
+display: none;
+}
+
+.content2 .links2 li a:hover, .content2 .links2 li label:hover {
+background: #323c4e;
+}
+
+.search-icon {
+color: #338DFF;
+font-size: 18px;
+cursor: pointer;
+width: 30px;
+text-align: center;
+position: absolute;
+left: 40px;
+}
+
+.zakarya-header .menu-icon {
+color: #338DFF;
+font-size: 18px;
+cursor: pointer;
+width: 30px;
+text-align: center;
+}
+
+label.search-icon {
+z-index: 999;
+}
+
+.zakarya-header .menu-icon {
+display: none;
+}
+
+#show-search:checked ~ .search-icon i::before {
+content: "\f00d";
+left: -40px;
+position: relative;
+}
+
+.search-box {
+position: absolute;
+height: 100%;
+width: 100%;
+opacity: 0;
+pointer-events: none;
+transition: all 0.3s ease;
+}
+
+#show-search:checked ~ .search-box {
+opacity: 1;
+pointer-events: auto;
+}
+
+.search-box input {
+width: 100%;
+height: 100%;
+border: none;
+outline: none;
+font-size: 17px;
+color: #fff;
+background: #000000;
+padding: 12px;
+}
+
+.search-box input::placeholder {
+color: #999999;
+opacity: 1;
+}
+
+::-webkit-input-placeholder {
+/* Chrome/Opera/Safari */
+color: #999999;
+}
+
+::-moz-placeholder {
+/* Firefox 19+ */
+color: #999999;
+}
+
+:-ms-input-placeholder {
+/* IE 10+ */
+color: #999999;
+}
+
+:-moz-placeholder {
+/* Firefox 18- */
+color: #999999;
+}
+
+::-moz-placeholder {
+opacity: 1;
+}
+
+.search-box .go-icon {
+position: absolute;
+right: 10px;
+top: 50%;
+transform: translateY(-50%);
+width: 70px;
+background: #171c24;
+border: none;
+outline: none;
+color: #fff;
+font-size: 20px;
+cursor: pointer;
+}
+
+.zakarya-header input[type="checkbox"] {
+display: none;
+}
+
+/* Dropdown Menu code start */
+.content2 .links2 ul {
+position: absolute;
+background: #2a2e33;
+top: 80px;
+z-index: -1;
+opacity: 0;
+visibility: hidden;
+}
+
+
+
+@media screen and (max-width: 2200px) {
+  .content2 .links2 ul {
+    position: absolute;
+    background: #2a2e33;
+    top: 80px;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: -26px;
+  }
+}
+@media screen and (max-width: 910px) {
+  .content2 .links2 ul {
+    position: absolute;
+    background: #2a2e33;
+    top: 80px;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 0px;
+
+  }
+}
+
+.content2 .links2 li:hover > ul {
+top: 70px;
+opacity: 1;
+visibility: visible;
+transition: all 0.3s ease;
+}
+
+.content2 .links2 ul li a {
+display: block;
+width: 100%;
+border-radius: 0px!important;
+}
+
+.content2 .links2 ul ul {
+position: absolute;
+top: 0;
+right: calc(-100% + 8px);
+}
+
+.content2 .links2 ul li {
+position: relative;
+}
+
+.content2 .links2 ul li:hover ul {
+top: 0;
+}
+
+/* Responsive code start */
+@media screen and (max-width: 1250px) {
+.zakarya-header nav {
+max-width: 100%;
+}
+
+nav .content2 .links2 {
+margin-left: 30px;
+}
+
+.content2 .links2 li a {
+padding: 8px 13px;
+}
+}
+
+@media screen and (max-width: 900px) {
+.zakarya-header .menu-icon {
+display: block;
+}
+
+.zakarya-header #toggleChecker:checked ~ .menu-icon i::before {
+content: "\f00d";
+}
+
+nav .content2 .links2 {
+display: block;
+position: fixed;
+background: #000000;
+height: 100%;
+width: 60%;
+top: 50px;
+right: -100%;
+margin-left: 0;
+max-width: 350px;
+overflow-y: auto;
+padding-bottom: 100px;
+transition: all 0.3s ease;
+height: 100vh;
+}
+
+nav #toggleChecker:checked ~ .content2 .links2 {
+right: 0%;
+}
+
+.content2 .links2 li {
+margin: 15px 20px;
+}
+
+.content2 .links2 li a, .content2 .links2 li label {
+display: block;
+padding: 8px 18px;
+cursor: pointer;
+}
+
+.content2 .links2 li a.desktop-link {
+display: none;
+}
+
+/* dropdown responsive code start */
+.content2 .links2 ul, .content2 .links2 ul ul {
+position: static;
+opacity: 1;
+visibility: visible;
+background: none;
+max-height: 0px;
+overflow: hidden;
+}
+
+.content2 .links2 #show-features:checked ~ ul, .content2 .links2 #show-services:checked ~ ul, .content2 .links2 #show-items:checked ~ ul {
+max-height: 100vh;
+background: #252b37;
+border-radius: 25px 25px;
+}
+.content2 .links2 #show-features2:checked ~ ul, .content2 .links2 #show-services:checked ~ ul, .content2 .links2 #show-items:checked ~ ul {
+  max-height: 100vh;
+  background: #252b37;
+  border-radius: 25px 25px;
+  }
+
+.content2 .links2 ul li {
+margin: 7px 20px;
+}
+
+.content2 .links2 ul li a {
+font-size: 15px;
+border-radius: 5px!important;
+}
+}
+
+@media screen and (max-width: 400px) {
+.content2 .logo2 a {
+font-size: 27px;
+}
+
+.search-box .go-icon {
+width: 30px;
+right: 0;
+}
+
+.search-box input {
+padding-right: 30px;
+}
+}
+
+.border-color {
+background: linear-gradient(90deg, #000000, #3965b1);
+font-size: 1px;
+color: #3965b1;
+padding-right: 1px;
+}
+
+.zakarya:hover {
+color: #ffffff;
+background: #338DFF;
+border: 1px solid #338DFF;
+text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+box-shadow: 0 0 5px #338DFF, 0 0 20px #338DFF, 0 0 50px #338DFF, 0 0 100px #338DFF;
+}
+
+.border-color-details {
+background: linear-gradient(227deg, #3965b1, #00000000, #3965b1);
+font-size: 1px;
+color: #3965b1;
+padding-right: 1px;
+}
+
+button.kurta {
+top: -15px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #ffffff52;
+color: #fff;
+padding: 0px 20px;
+position: relative;
+}
+
+
+
+
+#myInput {
+box-sizing: border-box;
+background-position: 14px 12px;
+background-repeat: no-repeat;
+font-size: 16px;
+padding: 14px 20px 12px 45px;
+border: none;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f6f6f6;
+min-width: 230px;
+overflow: auto;
+border: 1px solid #ddd;
+z-index: 1;
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.show {
+display: block;
+}
+
+.clasl_list_serach {
+padding: 10px;
+background: #252525;
+visibility: hidden;
+opacity: 0;
+transition: .3s linear;
+display: none;
+}
+a.pad-search {
+padding: 5px;
+max-height: 115px;
+overflow: hidden;
+}
+
+.list-movie-search {
+display: flex;
+gap: 10px;
+color: #fff;
+background: #0f1010;
+padding: 5px 10px;
+}
+
+.scroll-over {
+  overflow: auto;
+  height: 100vh;
+  background: #00000085;
+}
+
+.list-movie-search .textdown {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 2200px) {
+  .line-1 {
+      display: none;
+  }
+
+  .line-2 {
+      display: none;
+  }
+
+  .line-3 {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .line-1 {
+      display: block;
+  }
+
+  .line-2 {
+      display: block;
+  }
+
+  .line-3 {
+      display: block;
+  }
+}
+
+.checkboxtoggler {
+  width: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.7em;
+  font-size: 10px;
+}
+
+.line-1 {
+  background: #338DFF;
+  height: 0.3em;
+  border-radius: 10em;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  width: 15px;
+}
+
+.line-2 {
+  background: #fff;
+  height: 0.3em;
+  border-radius: 10em;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.line-3 {
+  background: #338DFF;
+  height: 0.3em;
+  border-radius: 10em;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  right: 15px;
+  position: relative;
+  width: 15px;
+}
+
+#toggleChecker {
+  height: 3em;
+  width: 100%;
+  display: none;
+}
+
+#toggleChecker:checked + #togglerLable .checkboxtoggler .line-1 {
+  -webkit-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+  -ms-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+  transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+  width: 3em;
+}
+
+#toggleChecker:checked + #togglerLable .checkboxtoggler .line-2 {
+  -webkit-transform: rotate(-45deg) translateY(0em) translateX(0em);
+  -ms-transform: rotate(-45deg) translateY(0em) translateX(0em);
+  transform: rotate(-45deg) translateY(0em) translateX(0em);
+  box-shadow: 0 0 5px 2px black;
+}
+
+#toggleChecker:checked + #togglerLable .checkboxtoggler .line-3 {
+  background: #000000;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+}
+
+.wrapper nav {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper .items {
+  display: flex;
+  max-width: 720px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.items span {
+  padding: 7px 25px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  background: #35393d;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.items span.active, .items span:hover {
+  color: #fff;
+  border: 2px solid #338DFF;
+}
+
+.gallery .image.hide {
+  display: none;
+}
+
+.gallery .image.show {
+  animation: animate 0.4s ease;
+}
+
+@keyframes animate {
+  0% {
+      transform: scale(0.5);
+  }
+
+  100% {
+      transform: scale(1);
+  }
+}
+
+@media (max-width: 700px) {
+  .wrapper nav .items {
+      max-width: 600px;
+  }
+
+  nav .items span {
+      padding: 7px 15px;
+      margin: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+      margin: 30px auto;
+  }
+
+  .wrapper nav .items {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  nav .items span {
+      margin: 5px;
+  }
+}
+
+
+
+/* Add this to your existing CSS block */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left: 10px;
+  top: 50px;
+  border: 1px solid #373737;
+}
+
+/* Optional: Style the links inside the dropdown */
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 12px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}

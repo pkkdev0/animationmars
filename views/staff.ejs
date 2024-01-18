@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FFC107"/>
+<link rel="stylesheet" href="/css/staff.css">
+  <!-- google font link-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+<!-- SCRIPT -->
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- OWL CAROUSEL -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+<title>Staff</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <br>
+  <!------------------------------------------------------------------------>
+  <!---------------------------------بەڕێوبەر------------------------------>
+  <!------------------------------------------------------------------------>
+  <div class="staff-holder">
+  <div class="staff-holder--group">
+  <div class="staff-holder--group--title">بەڕێوبەر</div>
+  <div style="direction: rtl;" class="staff-holder--group--item--holder">
+    <% owners.forEach(function(owner) { %>
+      <a href="<%= '/profile/' + owner.userId %>" class="staff-holder--group--item--holder--item">
+        <div class="staff-holder--group--item--holder--item--image">
+          <img src="<%= owner.profileimg %>">
+        </div>
+        <div class="staff-holder--group--item--holder--item--name">
+          <%= owner.username %>
+        </div>
+      </a>
+    <% }); %>
+  <!------------------------------------------------------------------------>
+  <!------------------------------------------------------------------------>
+  <!------------------------------------------------------------------------>
+  <!------------------------------------------------------------------------>
+  </div>
+  </div>
+  </div>
+
+
+
+<!------------------------------------------------------------------------>
+<!---------------------------------بئەدمین------------------------------>
+<!------------------------------------------------------------------------>
+<div class="staff-holder">
+<div class="staff-holder--group">
+<div class="staff-holder--group--title">ئەدمین</div>
+<div style="direction: rtl;" class="staff-holder--group--item--holder">
+  <% admins.forEach(function(admin) { %>
+    <a href="<%= '/profile/' + admin.userId %>" class="staff-holder--group--item--holder--item">
+      <div class="staff-holder--group--item--holder--item--image">
+        <img src="<%= admin.profileimg %>">
+      </div>
+      <div class="staff-holder--group--item--holder--item--name">
+        <%= admin.username %>
+      </div>
+    </a>
+  <% }); %>
+
+
+
+<!------------------------------------------------------------------------>
+<!------------------------------------------------------------------------>
+<!------------------------------------------------------------------------>
+<!------------------------------------------------------------------------>
+</div>
+</div>
+</div>
+
+
+    <!------------------------------------------------------------------------>
+    <!---------------------------------وەرگێرەکان------------------------------>
+    <!------------------------------------------------------------------------>
+    <div class="staff-holder">
+    <div class="staff-holder--group">
+    <div class="staff-holder--group--title">بەرگ</div>
+    <div style="direction: rtl;" class="staff-holder--group--item--holder">
+          <% bargs.forEach(function(barg) { %> <!-- Check if bargCounts is an array outside of the loop -->
+            <a href="<%= '/profile/' + barg.userId %>" class="staff-holder--group--item--holder--item">
+              <div class="staff-holder--group--item--holder--item--image">
+                <img src="<%= barg.profileimg %>">
+              </div>
+              <div class="staff-holder--group--item--holder--item--name">
+                <%= barg.username %>
+              </div>
+              <div class="staff-holder--group--item--holder--item--workNum">
+                <% const bargCount = bargCounts.find(count => count._id === barg.userId); %>
+                <%= bargCount ? bargCount.count : 0 %> barg
+              </div>
+            </a>
+          <% }); %>
+
+
+      </div>
+      </div>
+      </div>
+
+
+
+            <!------------------------------------------------------------------------>
+            <!---------------------------------وەرگێرەکان------------------------------>
+            <!------------------------------------------------------------------------>
+            <div class="staff-holder">
+            <div class="staff-holder--group">
+            <div class="staff-holder--group--title">تەکنیک</div>
+            <div style="direction: rtl;" class="staff-holder--group--item--holder">
+                  <% takneks.forEach(function(taknek) { %> <!-- Check if bargCounts is an array outside of the loop -->
+                    <a href="<%= '/profile/' + taknek.userId %>" class="staff-holder--group--item--holder--item">
+                      <div class="staff-holder--group--item--holder--item--image">
+                        <img src="<%= taknek.profileimg %>">
+                      </div>
+                      <div class="staff-holder--group--item--holder--item--name">
+                        <%= taknek.username %>
+                      </div>
+                      <div class="staff-holder--group--item--holder--item--workNum">
+                        <% const taknekCount = taknekCounts.find(count => count._id === taknek.userId); %>
+                        <%= taknekCount ? taknekCount.count : 0 %> taknek
+                      </div>
+                    </a>
+                  <% }); %>
+
+
+              </div>
+              </div>
+              </div>
+
+
+
+                    <!------------------------------------------------------------------------>
+                    <!---------------------------------وەرگێرەکان------------------------------>
+                    <!------------------------------------------------------------------------>
+                    <div class="staff-holder">
+                    <div class="staff-holder--group">
+                    <div class="staff-holder--group--title">وەرگێڕەکان</div>
+                    <div style="direction: rtl;" class="staff-holder--group--item--holder">
+                          <% wargers.forEach(function(warger) { %> <!-- Check if bargCounts is an array outside of the loop -->
+                            <a href="<%= '/profile/' + warger.userId %>" class="staff-holder--group--item--holder--item">
+                              <div class="staff-holder--group--item--holder--item--image">
+                                <img src="<%= warger.profileimg %>">
+                              </div>
+                              <div class="staff-holder--group--item--holder--item--name">
+                                <%= warger.username %>
+                              </div>
+                              <div class="staff-holder--group--item--holder--item--workNum">
+                                <% const wargerCount = wargerCounts.find(count => count._id === warger.userId); %>
+                                <%= wargerCount ? wargerCount.count : 0 %> warger
+                              </div>
+                            </a>
+                          <% }); %>
+
+
+                      </div>
+                      </div>
+                      </div>
+
+</body>
+</html>

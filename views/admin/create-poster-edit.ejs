@@ -1,0 +1,22 @@
+<!-- This is the edit poster form -->
+<form action="/admin/create-poster-edit/<%= poster.postId %>" method="post">
+  <div>
+    <label for="postId">Post ID:</label>
+    <input type="text" id="postId" name="postId" value="<%= poster.postId %>" required>
+  </div>
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+  </div>
+  <!-- ... existing fields ... -->
+  <div>
+      <label for="star">Star:</label>
+      <input type="text" id="star" name="star" value="<%= poster.star %>" required>
+  </div>
+  <!-- ... continue with other fields ... -->
+
+  <!-- Add more form fields here as needed -->
+  <div>
+    <button type="submit">Update Poster</button>
+  </div>
+</form>

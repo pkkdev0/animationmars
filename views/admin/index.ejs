@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://startbootstrap.github.io/startbootstrap-sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/admin/dashboard.css">
+</head>
+<body class="bg-dark" id="page-top">
+    <div id="wrapper">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <img width="64" src="../../img/logo.png">
+                </div>
+                <div class="sidebar-brand-text mx-3">zakarya<sup>faesal</sup></div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <hr class="sidebar-divider">
+
+
+<!--
+                                 film post
+-->
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-film"></i>
+                    <span>movies</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-dark-200 py-2 collapse-inner rounded">
+                      <a class="bg-dark-200 text-white collapse-item" href="/admin/post-movies">زانیاری فیلم</a>
+                      <a class="bg-dark-200 text-white collapse-item" href="/admin/">زانیاری زنجیرە</a>
+                      <a class="bg-dark-200 text-white collapse-item" href="/admin/create-poster">پۆستکردنی فیلم</a>
+                        <a class="bg-dark-200 text-white collapse-item" href="/admin/approved">پۆستکردنی زنجیرە</a>
+                    </div>
+                </div>
+            </li>
+
+<!-- 
+                                 staff and user
+-->
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagess"
+                    aria-expanded="true" aria-controls="collapsePagess">
+                    <i class="fa fa-fw fa-user"></i>
+                    <span>staff and user</span>
+                </a>
+                <div id="collapsePagess" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-dark-200 py-2 collapse-inner rounded">
+                        <a class="bg-dark-200 text-white collapse-item" href="/admin/staff">staff</a>
+                        <a class="bg-dark-200 text-white collapse-item" href="/admin/user-register">usar</a>
+                    </div>
+                </div>
+            </li>
+            <hr class="sidebar-divider">
+        </ul>
+<!-- 
+                                 staff and user
+-->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <nav class="navbar navbar-expand navbar-dark bg-dark-200 topbar mb-4 static-top shadow">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= username %></span>
+                                <img class="img-profile rounded-circle"
+                                    src="<%= profileimg %>">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in bg-dark-200"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item text-white" href="/profile/<%= userId %>">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item text-white" href="/logout" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+
+    <div class="bg-dark container-fluid">
+    <div class="row">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card bg-dark-200 border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                فیلم</div>
+                            <div class="h5 mb-0 font-weight-bold text-white"><%= posterCount %></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-film fa-2x text-white"></i>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card bg-dark-200 border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                دراما </div>
+                            <div class="h5 mb-0 font-weight-bold text-white">1</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-film fa-2x text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card bg-dark-200 border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-info text-uppercase mb-1">ئەکاونت</div>
+                                <div class="h5 mb-0 font-weight-bold text-white"><%= userProfileCount %></div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa fa-fw fa-user fa-2x text-white"></i>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+
+
+    <script src="https://designreset.com/cork/ltr/demo9/assets/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="https://designreset.com/cork/ltr/demo9/bootstrap/js/popper.min.js"></script>
+    <script src="https://designreset.com/cork/ltr/demo9/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://designreset.com/cork/ltr/demo9/plugins/table/datatable/datatables.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/js/sb-admin-2.min.js"></script>
+        <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/vendor/chart.js/Chart.min.js"></script>
+        <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/js/demo/chart-area-demo.js"></script>
+        <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js"></script>
+    <script>        
+        $('#default-ordering').DataTable( {
+            "dom": "<'dt--top-section'<'row'<'col-12 col-sm-6 d-flex justify-content-sm-start justify-content-center'l><'col-12 col-sm-6 d-flex justify-content-sm-end justify-content-center mt-sm-0 mt-3'f>>>" +
+        "<'table-responsive'tr>" +
+        "<'dt--bottom-section d-sm-flex justify-content-sm-between text-center'<'dt--pages-count  mb-sm-0 mb-3'i><'dt--pagination'p>>",
+            "oLanguage": {
+                "sInfo": " ",
+                "sSearch": ' ',
+                "sSearchPlaceholder": "Search...",
+               "sLengthMenu": " ",
+            },
+            "order": [[ 3, "desc" ]],
+            "stripeClasses": [],
+            "lengthMenu": 9,
+            "pageLength": 9,
+            drawCallback: function () { $('.dataTables_paginate > .pagination').addClass(' pagination-style-13 pagination-bordered'); }
+        } );
+    </script>
+<script>
+function newtab(url) {
+  window.open(url);
+}    
+</script>
+
+
+
+
+</body>
+</html>
